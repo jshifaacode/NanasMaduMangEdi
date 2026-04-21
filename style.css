@@ -1305,35 +1305,6 @@ section {
 
 .btn-submit-review:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(245,166,35,0.45); }
 
-/* ===== FOOTER ===== */
-footer {
-  background: linear-gradient(135deg, #1A0A00, var(--brown)); color: rgba(255,255,255,0.65); padding: 56px 60px 28px;
-}
-
-.footer-grid {
-  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px;
-}
-
-.footer-brand .pineapple { font-size: 48px; display: block; margin-bottom: 12px; }
-.footer-brand h3 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
-.footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 300px; }
-.footer-col h4 { color: var(--white); font-weight: 600; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; cursor: pointer; }
-.footer-col ul li a:hover { color: var(--gold); }
-
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.footer-bottom p { font-size: 0.82rem; }
-.footer-bottom .heart { color: var(--gold); }
-
-.footer-social-links { display: flex; gap: 12px; }
-.footer-social-links a {
-  width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.07);
-  display: flex; align-items: center; justify-content: center; font-size: 1rem; text-decoration: none; transition: all 0.2s; color: white;
-}
-
-.footer-social-links a:hover { background: var(--gold); transform: translateY(-2px); }
 
 /* ===== SCROLL INDICATOR ===== */
 .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--green)); z-index: 400; transition: width 0.1s; width: 0%; }
@@ -1399,4 +1370,49 @@ footer {
   .about-features { grid-template-columns: 1fr; }
   .kontak-social { flex-direction: column; }
   .modal-box { padding: 28px 20px; }
+}
+
+/* ===== FIX HERO OVERLAP (DESKTOP) ===== */
+#beranda {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+/* kasih ruang aman untuk teks */
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 600px;
+}
+
+/* HERO BADGE jangan nabrak */
+.hero-badge {
+  display: inline-flex;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 6;
+}
+
+/* HERO VISUAL tidak terlalu masuk ke teks */
+.hero-visual-simple {
+  right: 8%;
+  z-index: 2;
+}
+
+/* safety: kalau layar kecil desktop (1200–1400px) */
+@media (max-width: 1400px) {
+  .hero-visual-simple {
+    right: 3%;
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+/* biar teks tidak “ketiban” */
+.hero-content h1,
+.hero-content p {
+  position: relative;
+  z-index: 5;
 }
