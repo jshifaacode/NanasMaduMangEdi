@@ -226,9 +226,6 @@
           </div>
         </div>
       </div>
-
-      <div class="reviews-grid" id="reviewsContainer"></div>
-
       <div class="rating-form-section">
         <h3>Tulis Ulasan Anda</h3>
         <p class="sub">Bagikan pengalaman manis Anda bersama kami.</p>
@@ -250,6 +247,10 @@
         </div>
         <button id="submitBtn" class="btn-submit-review" onclick="submitReview()">Kirim Ulasan Sekarang</button>
       </div>
+
+      <div class="reviews-grid" id="reviewsContainer"></div>
+
+      
     </section>
 
   </main>
@@ -273,9 +274,6 @@
     </div>
   </div>
 
-  <!-- PENTING: JANGAN pakai type="module" karena script.js TIDAK memakai import.
-       Kalau pakai type="module", fungsi submitReview / openOrderModal / closeOrderModal
-       tidak akan jadi global dan onclick="..." di HTML akan error. -->
   <script src="script.js"></script>
 </body>
 </html>
